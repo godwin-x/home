@@ -1,0 +1,20 @@
+{
+    "blogs": [
+      {
+        "title": "10 Tips for Working from Home",
+        "date": "January 1, 2023",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at semper ex. Nulla facilisi. Nulla auctor, purus eu sollicitudin pellentesque, arcu orci placerat metus, at faucibus tellus nunc vel arcu."
+      },
+      {
+        "title": "The Benefits of Meditation",
+        "date": "December 15, 2022",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at semper ex. Nulla facilisi. Nulla auctor, purus eu sollicitudin pellentesque, arcu orci placerat metus, at faucibus tellus nunc vel arcu."
+      },
+      {
+        "title": "How to Create a Successful Blog",
+        "date": "November 30, 2022",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at semper ex. Nulla facilisi. Nulla auctor, purus eu sollicitudin pellentesque, arcu orci placerat metus, at faucibus tellus nunc vel arcu."
+      }
+    ]
+  }
+  

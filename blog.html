@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Blog</title>
+	<link rel="stylesheet" type="text/css" href="blog.css">
+</head>
+<body>
+	<header>
+		<h1>My Blog</h1>
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="contact.html">Contact</a></li>
+				<li><a href="blogs.html">Blogs</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<h2>Blogs</h2>
+		<ul id="blog-list">
+			<!-- blog posts will be added dynamically with JavaScript -->
+			<h3>Still Working On it</h3>
+		</ul>
+	</main>
+
+	<footer>
+		<p>&copy; 2023 My Blog</p>
+	</footer>
+
+	<script>
+		fetch('app.json')
+		  .then(response => response.json())
+		  .then(data => {
+		    const blogPosts = data.blogs;
+		    const blogList = document.getElementById('blog-list');
+		    blogPosts.forEach(blog => {
+		      const blogItem = document.createElement('li');
+		      const blogTitle = document.createElement('h3');
+		      blogTitle.textContent = blog.title;
+		      const blogDate = document.createElement('p');
+		      blogDate.textContent = `Posted on ${blog.date}`;
+		      const blogContent = document.createElement('p');
+		      blogContent.textContent = blog.content;
+		      blogItem.appendChild(blogTitle);
+		      blogItem.appendChild(blogDate);
+		      blogItem.appendChild(blogContent);
+		      blogList.appendChild(blogItem);
+		    });
+		  })
+		  .catch(error => {
+		    console.log(`Error fetching blog data: ${error}`);
+		  });
+	</script>
+</body>
+</html>

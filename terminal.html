@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terminal Index Page</title>
+    <link rel="stylesheet" href="terminal.css" />
+  </head>
+  <body>
+    <header>
+		<h1>Nzebunachi godwin</h1>
+		<nav>
+			<ul>
+				<li><a href="Experience.html">Experience</a></li>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="contact.html">Contact</a></li>
+                <li><a href="blog.html">Blog</a></li>
+			</ul>
+		</nav>
+	</header>
+    <div class="terminal">
+      <div class="terminal-header">
+        <div class="terminal-button red"></div>
+        <div class="terminal-button yellow"></div>
+        <div class="terminal-button green"></div>
+        <span>Terminal</span>
+      </div>
+      <div class="terminal-body">
+        <div class="terminal-text">
+          <p>Welcome to the Terminal Index Page!</p>
+          <p>Type "help" to see available commands.</p>
+          <p>Type "about" to learn more about this page.</p>
+        </div>
+        <form id="terminal-form">
+          <div class="terminal-prompt">$</div>
+          <input type="text" id="terminal-input" autofocus />
+        </form>
+      </div>
+    </div>
+    <script>
+        const terminalForm = document.querySelector("#terminal-form");
+        const terminalInput = document.querySelector("#terminal-input");
+        const terminalText = document.querySelector(".terminal-text");
+
+terminalForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  const command = terminalInput.value.trim().toLowerCase();
+  terminalInput.value = "";
+
+  switch (command) {
+    case "help":
+      terminalText.innerHTML +=
+        "<p>Available commands: ls, about, help</p>";
+      break;
+    case "about":
+      terminalText.innerHTML += "<p>This is a Terminal Index Page.</p>";
+      break;
+    case "ls":
+      terminalText.innerHTML += "<p>Desktop</p>";
+      break;
+    default:
+      terminalText.innerHTML += `<p>${command}: command not found</p>`;
+  }
+});
+    </script>
+  </body>
+</html>
