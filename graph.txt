@@ -8,3 +8,8 @@ function JSON_to_URLEncoded(element,key,list){
   }
   return list.join('&');
 }
+
+
+introspection querry :
+
+{"query": "query IntrospectionQuery {schema {queryType { name },mutationType { name },subscriptionType { name },types {...FullType},directives {name,description,args {...InputValue},onOperation,onFragment,onField}}}\nfragment FullType on Type {kind,name,description,fields(includeDeprecated: true) {name,description,args {...InputValue},type {...TypeRef},isDeprecated,deprecationReason},inputFields {...InputValue},interfaces {...TypeRef},enumValues(includeDeprecated: true) {name,description,isDeprecated,deprecationReason},possibleTypes {...TypeRef}}\nfragment InputValue on InputValue {name,description,type { ...TypeRef },defaultValue}\nfragment TypeRef on Type {kind,name,ofType {kind,name,ofType {kind,name,ofType {kind,name}}}}"}
